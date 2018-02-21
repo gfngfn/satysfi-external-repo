@@ -1,6 +1,6 @@
 FROM ocaml/opam:alpine_ocaml-%ocaml_version%
 
-WORKDIR /home/opam/repo
+WORKDIR /home/opam/satysfi-external-repo
 ADD . .
 # Enable --yes option for opam commands (see `opam --help`)
 ENV OPAMYES "true"
@@ -10,7 +10,7 @@ ENV OPAMBUILDTEST %opambuildtest%
 RUN set -ex \
  && cd /home/opam/opam-repository \
  && git pull --quiet origin master \
- && cd /home/opam/repo \
+ && cd /home/opam/satysfi-external-repo \
  && ls \
  && opam repository add satysfi-external . \
  && opam update satysfi-external \
