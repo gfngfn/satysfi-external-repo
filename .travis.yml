@@ -6,10 +6,6 @@ services:
   - docker
 env:
   global:
-        opam repo add satysfi-external && \
-        opam update satysfi-external \
-        opam lint \"./packages/${PACKAGE%%.*}/${PACKAGE}/\""
-    - INSTALL="opam depext -ui \"${PACKAGE}\""
     - OPAMBUILDTEST="true"
   matrix:
     # Note that PRE_INSTALL_HOOK assumes that PACKAGE contains its version.
