@@ -12,7 +12,8 @@ RUN set -ex \
  && git pull --quiet origin master \
  && cd /home/opam/repo \
  && opam repo add satysfi-external . \
- && opam update \
+ && opam update satysfi-external \
+ && opam update default \
  && opam depext --update %package% \
  && opam install --deps-only %package%
 CMD opam install %package%
