@@ -1,21 +1,23 @@
-# Documentation: https://github.com/ocaml/ocaml-ci-scripts/blob/master/README-travis-runner.md
+# Install and test each package on a Docker image ocaml/opam:alpine_ocaml-<version>
 
 language: c
 sudo: required
 services:
   - docker
 install:
-  - wget https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-docker.sh
-script: bash -ex ./.travis-docker.sh
+  - DOCKERFILE=".travis-Dockerfile.template"
+  - sed -i "s/%ocaml_version%/${OCAML_VERSION}/g" "${DOCKERFILE}"
+  - sed -i "s/%package%/${PACKAGE}/g"             "${DOCKERFILE}"
+  - sed -i "s/%opambuildtest%/${OPAMBUILDTEST}/g" "${DOCKERFILE}"
+  - docker build --tag satysfi/satysfi-external-repo "${DOCKERFILE}"
+script: docker run satysfi/satysfi-external-repo
 env:
   global:
-    - DISTRO="alpine"
-    - PRE_INSTALL_HOOK="\
         opam repo add satysfi-external && \
         opam update satysfi-external \
         opam lint \"./packages/${PACKAGE%%.*}/${PACKAGE}/\""
     - INSTALL="opam depext -ui \"${PACKAGE}\""
-    - TESTS="true"
+    - OPAMBUILDTEST="true"
   matrix:
     # Note that PRE_INSTALL_HOOK assumes that PACKAGE contains its version.
     - PACKAGE="camlpdf.2.2.1+satysfi" OCAML_VERSION="4.05.0"

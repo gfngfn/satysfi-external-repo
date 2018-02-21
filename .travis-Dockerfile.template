@@ -1,0 +1,17 @@
+FROM ocaml/opam:alpine_ocaml-%ocaml_version%
+
+WORKDIR /home/opam/repo
+ADD . .
+# Enable --yes option for opam commands (see `opam --help`)
+ENV OPAMYES "true"
+# Enable/disable tests (see `opam install --help`)
+ENV OPAMBUILDTEST %opambuildtest%
+# Note that ocaml/opam uses a local opam-repository instead of the online one
+RUN cd /home/opam/opam-repository \
+ && git pull --quiet origin master \
+ && cd /home/opam/repo \
+ && opam repo add satysfi-external . \
+ && opam update \
+ && opam depext --update %package% \
+ && opam install --deps-only %package%
+CMD opam install %package%
