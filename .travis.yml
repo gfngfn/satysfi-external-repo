@@ -12,7 +12,7 @@ env:
     - DISTRO="alpine"
     - PRE_INSTALL_HOOK="\
         opam repo add satysfi-external && \
-        opam update \
+        opam update satysfi-external \
         opam lint \"./packages/${PACKAGE%%.*}/${PACKAGE}/\""
     - INSTALL="opam depext -ui \"${PACKAGE}\""
     - TESTS="true"
