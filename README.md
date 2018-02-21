@@ -5,7 +5,7 @@ Welcome! Here is a custom OPAM repository for [SATySFi].
 You can add this repository into your OPAM by running the following command.
 
 ```sh
-opam remote add satysfi-external https://github.com/gfngfn/satysfi-external-repo.git
+opam repository add satysfi-external https://github.com/gfngfn/satysfi-external-repo.git
 ```
 
 ## TODO
