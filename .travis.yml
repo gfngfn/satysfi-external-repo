@@ -13,7 +13,8 @@ env:
     - PRE_INSTALL_HOOK="\
         opam repo add satysfi-external && \
         opam update \
-        opam lint \"./packages/${PACKAGE_NAME%%.*}/${PACKAGE}/\""
+        opam lint \"./packages/${PACKAGE%%.*}/${PACKAGE}/\""
+    - INSTALL="opam depext -ui \"${PACKAGE}\""
     - TESTS="true"
   matrix:
     # Note that PRE_INSTALL_HOOK assumes that PACKAGE contains its version.
