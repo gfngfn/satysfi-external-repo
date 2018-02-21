@@ -8,7 +8,6 @@ ENV OPAMYES "true"
 ENV OPAMBUILDTEST %opambuildtest%
 # Note that ocaml/opam uses a local opam-repository instead of the online one
 RUN set -ex \
- && rsync --version \
  && cd /home/opam/opam-repository \
  && git pull --quiet origin master \
  && cd /home/opam/repo \
