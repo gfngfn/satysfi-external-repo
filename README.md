@@ -18,6 +18,7 @@ We welcome contributions! If you notice a problem of *packaging*, then send a PR
 
 ### Resource
 
+* ["Repository format"](https://opam.ocaml.org/doc/Manual.html#Repository-format)
 * "Managing Repositories" of ["OPAM: A Package Management System for OCaml Developer Manual (version 1.2.1)"](http://opam.ocaml.org/doc/manual/dev-manual.html)
 * https://github.com/ocaml/opam-repository
 * Some other custom repos
