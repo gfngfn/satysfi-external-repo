@@ -16,8 +16,7 @@ RUN set -ex \
  && cd /home/opam/satysfi-external-repo2 \
  && ls \
  && opam repository add satysfi-external . \
- && opam update satysfi-external \
- && opam update default \
+ && opam update \
  && opam depext --update %package% \
  && opam install --deps-only %package%
 CMD opam install %package%
