@@ -9,10 +9,11 @@ env:
     - OPAMBUILDTEST="true"
   matrix:
     # Note that PRE_INSTALL_HOOK assumes that PACKAGE contains its version.
-    - PACKAGE="camlpdf.2.2.1+satysfi" OCAML_VERSION="4.05"
     - PACKAGE="camlpdf.2.2.1+satysfi" OCAML_VERSION="4.06"
-    - PACKAGE="otfm.0.3.0+satysfi" OCAML_VERSION="4.05"
     - PACKAGE="otfm.0.3.0+satysfi" OCAML_VERSION="4.06"
+    - PACKAGE="otfm.0.3.1+satysfi" OCAML_VERSION="4.06"
+    - PACKAGE="otfm.0.3.2+satysfi" OCAML_VERSION="4.06"
+    - PACKAGE="yojson.1.4.1+satysfi" OCAML_VERSION="4.06"
 install:
   - DOCKERFILE=".travis-Dockerfile.template"
   - sed -i "s/%ocaml_version%/${OCAML_VERSION}/g" "${DOCKERFILE}"
