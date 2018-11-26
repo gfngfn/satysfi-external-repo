@@ -40,4 +40,5 @@ under the ISC license.
   [Uutf]: http://erratique.ch/software/uutf"""
 url {
   src: "https://github.com/gfngfn/otfm/archive/v0.3.0+satysfi.tar.gz"
+  checksum: "md5=e07799e6e411aa3cf794790942c0fbdb"
 }

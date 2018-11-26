@@ -39,5 +39,6 @@ under the ISC license.
   [SATySFi]: https://github.com/gfngfn/SATySFi
   [Uutf]: http://erratique.ch/software/uutf"""
 url {
-  src: "git+https://github.com/gfngfn/otfm.git"
+  src: "https://github.com/gfngfn/otfm/archive/v0.3.2+satysfi.tar.gz"
+  checksum: "md5=74d929bd576533552b23f5d77832d650"
 }
