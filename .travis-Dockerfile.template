@@ -1,4 +1,4 @@
-FROM ocaml/opam:alpine_ocaml-%ocaml_version%
+FROM ocaml/opam2:alpine
 
 WORKDIR /home/opam/satysfi-external-repo
 COPY . .
@@ -6,15 +6,13 @@ COPY . .
 ENV OPAMYES "true"
 # Enable/disable tests (see `opam install --help`)
 ENV OPAMBUILDTEST %opambuildtest%
-# Note that ocaml/opam uses a local opam-repository instead of the online one
-# Copying is a workaround. It's unnecessary if using OPAM 2.
 RUN set -ex \
- && cd /home/opam/ \
- && cp -r satysfi-external-repo satysfi-external-repo2 \
  && cd /home/opam/opam-repository \
  && git pull --quiet origin master \
- && cd /home/opam/satysfi-external-repo2 \
+ && cd /home/opam/satysfi-external-repo \
  && ls \
+ && opam switch %ocaml_version% \
+ && eval $(opam env) \
  && opam repository add satysfi-external . \
  && opam update \
  && opam depext --update %package% \
