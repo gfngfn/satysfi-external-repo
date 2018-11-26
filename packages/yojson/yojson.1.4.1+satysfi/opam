@@ -1,5 +1,8 @@
 opam-version: "2.0"
-maintainer: "@gfngfn"
+maintainer: [
+  "@gfngfn"
+  "Takuma Ishikawa <nekketsuuu@gmail.com>"
+]
 authors: [
   "Martin Jambon"
   "@gfngfn"
