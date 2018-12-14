@@ -1,5 +1,8 @@
 opam-version: "2.0"
-maintainer: "@gfngfn"
+maintainer: [
+  "@gfngfn"
+  "Takuma Ishikawa <nekketsuuu@gmail.com>"
+]
 authors: [
   "Martin Jambon"
   "@gfngfn"
@@ -30,5 +33,6 @@ yojson package.
 The program atdgen can be used to derive OCaml-JSON serializers and
 deserializers from type definitions."""
 url {
-  src: "https://github.com/gfngfn/yojson/archive/v.1.4.1+satysfi.tar.gz"
+  src: "https://github.com/gfngfn/yojson/archive/v1.4.1+satysfi.tar.gz"
+  checksum: "md5=9785bb9a03dce2a708957107581f52a8"
 }
