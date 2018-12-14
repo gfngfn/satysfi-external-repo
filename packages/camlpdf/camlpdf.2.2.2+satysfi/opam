@@ -26,5 +26,5 @@ This version is a fork of it for [SATySFi].
 flags: light-uninstall
 url {
   src: "https://github.com/gfngfn/camlpdf/archive/v2.2.2+satysfi.tar.gz"
-  checksum: "6fbd746018cc5e6615d9cc83f53df608"
+  checksum: "df44cf96bd22252938a413ad038b8227"
 }
