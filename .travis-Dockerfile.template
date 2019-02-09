@@ -1,9 +1,9 @@
 FROM ocaml/opam2:alpine
 
 # Install ruby
-RUN apk update && \
-    apk upgrade && \
-    apk add --no-cache \
+RUN sudo apk update && \
+    sudo apk upgrade && \
+    sudo apk add --no-cache \
     ruby
 
 WORKDIR /home/opam/satysfi-external-repo
