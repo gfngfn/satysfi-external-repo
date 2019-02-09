@@ -1,5 +1,11 @@
 FROM ocaml/opam2:alpine
 
+# Install ruby
+RUN apk update && \
+    apk upgrade && \
+    apk add --no-cache \
+    ruby
+
 WORKDIR /home/opam/satysfi-external-repo
 COPY . .
 # Enable --yes option for opam commands (see `opam --help`)
