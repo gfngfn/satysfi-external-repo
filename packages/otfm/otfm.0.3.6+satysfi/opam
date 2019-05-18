@@ -1,0 +1,47 @@
+opam-version: "2.0"
+maintainer: [
+  "@gfngfn"
+  "Takuma Ishikawa <nekketsuuu@gmail.com>"
+]
+homepage: "https://github.com/gfngfn/otfm"
+authors: [
+  "Daniel Bünzli <daniel.buenzl i@erratique.ch>"
+  "gfngfn"
+]
+dev-repo: "git+https://github.com/gfngfn/otfm.git"
+bug-reports: "https://github.com/gfngfn/otfm/issues"
+tags: [ "OpenType" "ttf" "font" "decoder" "graphics" "org:erratique" ]
+license: "ISC"
+depends: [
+  "ocaml" {>= "4.01.0"}
+  "ocamlfind" {build}
+  "ocamlbuild" {build}
+  "topkg" {build}
+  "result"
+  "uchar"
+  "uutf" {>= "1.0.0"}
+]
+build: [
+  ["ocaml" "pkg/pkg.ml" "build" "--pinned" "%{pinned}%"]
+]
+synopsis: "OpenType font decoder for OCaml"
+description: """
+Release 0.3.6+satysfi by @gfngfn
+
+Otfm is originally published by Daniel Bünzli.
+This version is a fork of it for [SATySFi].
+
+Otfm is an in-memory decoder for the OpenType font data format. It
+provides low-level access to font tables and functions to decode some
+of them.
+
+Otfm is made of a single module and depends on [Uutf]. It is distributed
+under the ISC license.
+
+
+  [SATySFi]: https://github.com/gfngfn/SATySFi
+  [Uutf]: http://erratique.ch/software/uutf"""
+url {
+  src: "https://github.com/gfngfn/otfm/archive/v0.3.6+satysfi.tar.gz"
+  checksum: "md5=8d2e30a16e794ece1b81803ba9e8c718"
+}
