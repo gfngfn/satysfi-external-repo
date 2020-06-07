@@ -7,16 +7,19 @@ authors: [
   "Martin Jambon"
   "@gfngfn"
 ]
-homepage: "https://github.com/gfngfn/yojson"
-bug-reports: "https://github.com/gfngfn/yojson/issues"
-dev-repo: "git+https://github.com/gfngfn/yojson.git"
+homepage: "https://github.com/gfngfn/yojson-with-position"
+bug-reports: "https://github.com/gfngfn/yojson-with-position/issues"
+dev-repo: "git+https://github.com/gfngfn/yojson-with-position.git"
 build: [
-  ["jbuilder" "build" "-p" name "-j" jobs]
-  ["jbuilder" "runtest" "-p" name] {with-test}
+  ["dune" "subst" "-n" name] {pinned}
+  ["dune" "build" "-p" name "-j" jobs]
+]
+build-test: [
+  ["dune" "runtest" "-p" name]
 ]
 depends: [
   "ocaml" {>= "4.02.3"}
-  "jbuilder" {build}
+  "dune" {build}
   "cppo" {build}
   "easy-format"
   "biniou" {>= "1.2.0"}
@@ -33,6 +36,6 @@ yojson package.
 The program atdgen can be used to derive OCaml-JSON serializers and
 deserializers from type definitions."""
 url {
-  src: "https://github.com/gfngfn/yojson/archive/v1.4.1+satysfi.tar.gz"
-  checksum: "md5=9785bb9a03dce2a708957107581f52a8"
+  src: "https://github.com/gfngfn/yojson-with-position/archive/v1.4.2+satysfi.tar.gz"
+  checksum: "md5=fa120d0183801681227704dd0753ad43"
 }
