@@ -19,7 +19,7 @@ build-test: [
 ]
 depends: [
   "ocaml" {>= "4.02.3"}
-  "dune" {build}
+  "dune" {build & >= "2.0"}
   "cppo" {build}
   "easy-format"
   "biniou" {>= "1.2.0"}
