@@ -34,5 +34,5 @@ build: [
 dev-repo: "git+https://github.com/gfngfn/otfed.git"
 url {
   src: "https://github.com/gfngfn/otfed/archive/refs/tags/0.0.1.tar.gz"
-  checksum: "d6ce969c6b6bdbcada17f41d4edb53ef"
+  checksum: "878edfbc4cb763ec3f232608a4a9e305"
 }
